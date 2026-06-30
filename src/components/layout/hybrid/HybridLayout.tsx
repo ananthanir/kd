@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
 import { useMedia } from 'react-use'
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -15,6 +14,7 @@ import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
 // Shared header widgets
 import ModeDropdown from '@components/layout/shared/ModeDropdown'
 import UserDropdown from '@components/layout/shared/UserDropdown'
+import KUHSLogo from '@components/layout/shared/KUHSLogo'
 import VerticalFooter from '@components/layout/vertical/Footer'
 import RoleSwitcher from '@components/RoleSwitcher'
 import MobileMenu from './MobileMenu'
@@ -119,23 +119,7 @@ const HybridLayout = ({ children }: Props) => {
           </button>
         )}
 
-        {/* Logo + portal name */}
-        <Image
-          src='/images/logos/kuhs-logo.png'
-          alt='KUHS'
-          width={32}
-          height={32}
-          className='object-contain shrink-0'
-          priority
-        />
-        <div className='hidden sm:block leading-none shrink-0'>
-          <p className='text-[12px] font-extrabold m-0 leading-tight' style={{ color: 'var(--mui-palette-text-primary)' }}>
-            KUHS ERP
-          </p>
-          <p className='text-[10px] m-0 leading-tight' style={{ color: 'var(--mui-palette-text-secondary)' }}>
-            College Portal
-          </p>
-        </div>
+        <KUHSLogo />
 
         <div className='flex-1' />
 

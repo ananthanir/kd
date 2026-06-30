@@ -1,6 +1,7 @@
 'use client'
 
 import classnames from 'classnames'
+import KUHSLogo from '@components/layout/shared/KUHSLogo'
 
 import NavToggle from '@components/layout/horizontal/NavToggle'
 import ModeDropdown from '@components/layout/shared/ModeDropdown'
@@ -20,6 +21,7 @@ const UniversityNavbarContent = () => {
     >
       <div className='flex items-center gap-4'>
         <NavToggle />
+        <KUHSLogo />
       </div>
       <div className='flex items-center gap-3'>
         {/* Role switcher — only visible on desktop to avoid clutter on mobile */}

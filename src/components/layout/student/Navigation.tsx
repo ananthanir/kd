@@ -15,7 +15,7 @@ import type { Mode } from '@core/types'
 // Component Imports
 import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu/vertical-menu'
 import StudentVerticalMenu from './VerticalMenu'
-import Logo from '@components/layout/shared/Logo'
+import KUHSLogo from '@components/layout/shared/KUHSLogo'
 
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
@@ -66,7 +66,7 @@ const StudentNavigation = ({ mode }: Props) => {
   const theme = useTheme()
   const shadowRef = useRef(null)
 
-  const { isCollapsed, isHovered, collapseVerticalNav, isBreakpointReached } = verticalNavOptions
+  const { isCollapsed, isHovered, collapseVerticalNav, isBreakpointReached, transitionDuration } = verticalNavOptions
   const isSemiDark = settings.semiDark
   const currentMode = muiMode === 'system' ? muiSystemMode : muiMode || mode
   const isDark = currentMode === 'dark'
@@ -103,7 +103,10 @@ const StudentNavigation = ({ mode }: Props) => {
     >
       <NavHeader>
         <Link href='/student/dashboard'>
-          <Logo />
+          <KUHSLogo
+            textVisible={!isCollapsed || isHovered}
+            transitionDuration={transitionDuration}
+          />
         </Link>
         {!(isCollapsed && !isHovered) && (
           <NavCollapseIcons

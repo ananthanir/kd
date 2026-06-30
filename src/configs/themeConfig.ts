@@ -56,9 +56,9 @@ export type PortalConfig = {
 }
 
 export const portals = {
-  college:    { primaryColor: brand.primary } satisfies PortalConfig,
-  student:    { primaryColor: brand.primary } satisfies PortalConfig,
-  university: { primaryColor: brand.primary } satisfies PortalConfig,
+  college:    { primaryColor: '#6fda18' } satisfies PortalConfig,  // purple  — Hybrid layout
+  student:    { primaryColor: '#b9062d' } satisfies PortalConfig,  // teal    — Vertical layout
+  university: { primaryColor: '#FF891D' } satisfies PortalConfig,  // orange  — Horizontal layout
   other:      { primaryColor: brand.primary } satisfies PortalConfig,
 } as const
 
@@ -100,7 +100,7 @@ const themeConfig: Config = {
   homePageUrl: '/home',
   settingsCookieName: 'materialize-mui-next-demo-1',
   mode: 'system',      // 'system', 'light', 'dark'
-  skin: 'default',    // 'default', 'bordered'
+  skin: 'bordered',   // 'default', 'bordered'
   semiDark: false,
   // NOTE: layout is unused in KUHS portals — each portal's layout is determined by
   // the user's role at login (college→hybrid, student→vertical, university→horizontal).

@@ -6,28 +6,14 @@ import UserTypeSelector from './login/UserTypeSelector'
 import LoginForm from './login/LoginForm'
 import Footer from './login/Footer'
 import UniversityBranding from './login/UniversityBranding'
-import { Mode } from '@/@core/types'
-import { useSettings } from '@/@core/hooks/useSettings'
-import classNames from 'classnames'
 
-type Props = {
-  mode: Mode
-}
-
-const LoginV2 = ({ mode }: Props) => {
+const LoginV2 = () => {
   const [selectedUserType, setSelectedUserType] = useState<string>('student')
-  const isDark = mode === 'dark'
-  const { settings } = useSettings()
 
   return (
     <div
-      className={classNames(
-        'min-h-screen flex flex-col gap-4 px-4 py-5 lg:h-screen lg:overflow-hidden lg:px-6',
-        {
-          'bg-kuhs-bg text-kuhs-navy': !isDark,
-          'bg-kuhs-bg-dark text-white': isDark
-        }
-      )}
+      className='min-h-screen flex flex-col gap-4 px-4 py-5 lg:h-screen lg:overflow-hidden lg:px-6'
+      style={{ backgroundColor: 'var(--mui-palette-background-default)' }}
     >
       {/* 1. Navigation */}
       <NavBar />
